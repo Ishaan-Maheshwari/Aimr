@@ -21,13 +21,13 @@ class Explore extends CI_Controller{
         $this->load->view('templates/footer');
     }
 
-    public function category($categ_name='ALL',$SubCateg_name='ALL')
+    public function category($Categ_name='ALL',$SubCateg_name='ALL')
     {
-        if(($categ_name == 'ALL') && ($SubCateg_name != 'ALL'))
+        if(($Categ_name == 'ALL') && ($SubCateg_name != 'ALL'))
         {
             show_404();
         }
-        elseif(($categ_name != 'ALL') && ($SubCateg_name == 'ALL'))
+        elseif(($Categ_name != 'ALL') && ($SubCateg_name == 'ALL'))
         {
             $data['categories'] = $this->Category_model->get_categ($Categ_name);
             $data['title'] = 'Explore '.$Categ_name;
@@ -38,7 +38,7 @@ class Explore extends CI_Controller{
             $this->load->view('explorer.php',$data);
             $this->load->view('templates/footer');
         }
-        elseif(($categ_name != 'ALL') && ($SubCateg_name != 'ALL'))
+        elseif(($Categ_name != 'ALL') && ($SubCateg_name != 'ALL'))
         {
             $data['categories'] = $this->Category_model->get_categ($Categ_name=$Categ_name,$SubCateg_name=$SubCateg_name);
             $data['title'] = 'Explore '.$SubCateg_name.' in '.$Categ_name;
