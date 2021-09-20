@@ -14,6 +14,12 @@ class Pages extends CI_Controller {
             }
     
             $data['title'] = ucfirst($page); // Capitalize the first letter
+
+            if($page == 'home')
+            {
+                //TODO:redirect to dashboard if already logged in
+                $this->load->view('pages/'.$page, $data);
+            }
     
             $this->load->view('templates/header');
             $this->load->view('templates/guestsidebar', $data);
