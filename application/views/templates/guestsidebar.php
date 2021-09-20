@@ -4,6 +4,14 @@
         <li>Guest</li>
         <li><span class="material-icons-outlined">&#xe574;</span>Categories</li>
         <div id="category-list">
+        <?php foreach ($categories as $category): ?>
+
+<li>
+<?php $category['SubCateg_name']; ?>
+        </li>
+
+<?php endforeach; ?>
+        <!--
             <li>category</li>
             <li>category</li>
             <li>category</li>
@@ -28,6 +36,10 @@
             <li>category</li>
             <li>category</li>
             <li>category</li>
+
+-->
+
+        
         </div>
     </ul>
     <ul id="downlist">
