@@ -15,7 +15,7 @@ class Explore extends CI_Controller{
         $data['title'] = 'Explore All Categories';
 
         $this->load->view('templates/header');
-        $this->load->view('templates/guestsidebar');
+        $this->load->view('templates/guestsidebar',$data);
         $this->load->view('templates/banner');
         $this->load->view('explorer.php',$data);
         $this->load->view('templates/footer');
@@ -33,7 +33,7 @@ class Explore extends CI_Controller{
             $data['title'] = 'Explore '.$Categ_name;
 
             $this->load->view('templates/header');
-            //$this->load->view('templates/guestsidebar');
+            $this->load->view('templates/guestsidebar',$data);
             $this->load->view('templates/banner');
             $this->load->view('explorer.php',$data);
             $this->load->view('templates/footer');
@@ -44,7 +44,7 @@ class Explore extends CI_Controller{
             $data['title'] = 'Explore '.$SubCateg_name.' in '.$Categ_name;
 
             $this->load->view('templates/header');
-            //$this->load->view('templates/guestsidebar');
+            $this->load->view('templates/guestsidebar',$data);
             $this->load->view('templates/banner');
             $this->load->view('explorer.php',$data);
             $this->load->view('templates/footer');
