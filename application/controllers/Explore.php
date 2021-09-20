@@ -6,6 +6,7 @@ class Explore extends CI_Controller{
 
         parent::__construct();
         $this->load->model('Category_model');
+        $this->load->helper('url');
         
     }
     public function index()
