@@ -1,3 +1,4 @@
+<div class="main">
 <h2><?php echo $title; ?></h2>
 <?php foreach ($categories as $category): ?>
 
@@ -6,3 +7,5 @@
 <hr>
 
 <?php endforeach; ?>
+
+</div>
