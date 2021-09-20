@@ -40,8 +40,8 @@ class Explore extends CI_Controller{
         }
         elseif(($categ_name != 'ALL') && ($SubCateg_name != 'ALL'))
         {
-            $data['categories'] = $this->Category_model->get_categ($Categ_name,$SubCateg_name);
-            $data['title'] = 'Explore '.$SubCateg_name.'in'.$Categ_name;
+            $data['categories'] = $this->Category_model->get_categ($Categ_name=$Categ_name,$SubCateg_name=$SubCateg_name);
+            $data['title'] = 'Explore '.$SubCateg_name.' in '.$Categ_name;
 
             $this->load->view('templates/header');
             //$this->load->view('templates/guestsidebar');
