@@ -4,12 +4,20 @@ class Explore extends CI_Controller{
     {
         parent::__construct();
 
-        //LOAD RELEVENT MODEL
+        parent::__construct();
+        $this->load->model('Category_model');
         
     }
     public function index()
     {
-        //list all sub categories
+        $data['categories'] = $this->Category_model->get_categ();
+        $data['title'] = 'Explore All Categories';
+
+        $this->load->view('templates/header');
+        $this->load->view('templates/guestsidebar');
+        $this->load->view('templates/banner');
+        $this->load->view('explorer.php',$data);
+        $this->load->view('templates/footer');
     }
 
     public function category($categ_name='ALL',$subcateg_name='ALL')

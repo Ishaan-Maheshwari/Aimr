@@ -28,7 +28,7 @@
     if ($this->form_validation->run() === FALSE)
     {
         $this->load->view('templates/header');
-        $this->load->view('templates/sidebar');
+        $this->load->view('templates/guestsidebar');
         $this->load->view('templates/banner');
         $this->load->view('forms/sellItem');
         $this->load->view('templates/footer');
