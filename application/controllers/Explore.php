@@ -23,11 +23,7 @@ class Explore extends CI_Controller{
 
     public function category($categ_name='ALL',$SubCateg_name='ALL')
     {
-        if(($categ_name == 'ALL') && ($SubCateg_name == 'ALL'))
-        {
-            this->index();
-        }
-        elseif(($categ_name == 'ALL') && ($SubCateg_name != 'ALL'))
+        if(($categ_name == 'ALL') && ($SubCateg_name != 'ALL'))
         {
             show_404();
         }
