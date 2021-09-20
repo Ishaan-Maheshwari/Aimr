@@ -14,7 +14,7 @@
                     show_404();
             }
             $this->load->view('templates/header');
-            $this->load->view('templates/sidebar');
+            $this->load->view('templates/guestsidebar');
             $this->load->view('templates/banner');
             $this->load->view('forms/sellItem');
             $this->load->view('templates/footer');
