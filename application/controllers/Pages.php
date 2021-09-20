@@ -20,12 +20,14 @@ class Pages extends CI_Controller {
                 //TODO:redirect to dashboard if already logged in
                 $this->load->view('pages/'.$page, $data);
             }
-    
-            $this->load->view('templates/header');
-            $this->load->view('templates/guestsidebar', $data);
-            $this->load->view('templates/banner', $data);
-            $this->load->view('pages/'.$page, $data);
-            $this->load->view('templates/footer');
+            else{
+                $this->load->view('templates/header');
+                $this->load->view('templates/guestsidebar', $data);
+                $this->load->view('templates/banner', $data);
+                $this->load->view('pages/'.$page, $data);
+                $this->load->view('templates/footer');
+            }    
+           
     }
 }
 ?>
