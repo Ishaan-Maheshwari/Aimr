@@ -21,12 +21,39 @@ class Explore extends CI_Controller{
         $this->load->view('templates/footer');
     }
 
-    public function category($categ_name='ALL',$subcateg_name='ALL')
+    public function category($categ_name='ALL',$SubCateg_name='ALL')
     {
-        //extact items from db if categ_name is all AND subcateg_name is also all
-        //if categ_name is all and subcateg_name is not all then show 404  error
-        //extract data from db when categ_name is given and subcateg_name is all
-        // extract data from db when both parameters are given
+        if(($categ_name == 'ALL') && ($SubCateg_name == 'ALL'))
+        {
+            this->index();
+        }
+        elseif(($categ_name == 'ALL') && ($SubCateg_name != 'ALL'))
+        {
+            show_404();
+        }
+        elseif(($categ_name != 'ALL') && ($SubCateg_name == 'ALL'))
+        {
+            $data['categories'] = $this->Category_model->get_categ($Categ_name);
+            $data['title'] = 'Explore '.$Categ_name;
+
+            $this->load->view('templates/header');
+            $this->load->view('templates/guestsidebar');
+            $this->load->view('templates/banner');
+            $this->load->view('explorer.php',$data);
+            $this->load->view('templates/footer');
+        }
+        elseif(($categ_name != 'ALL') && ($SubCateg_name != 'ALL'))
+        {
+            $data['categories'] = $this->Category_model->get_categ($Categ_name,$SubCateg_name);
+            $data['title'] = 'Explore '.$SubCateg_name.'in'.$Categ_name;
+
+            $this->load->view('templates/header');
+            $this->load->view('templates/guestsidebar');
+            $this->load->view('templates/banner');
+            $this->load->view('explorer.php',$data);
+            $this->load->view('templates/footer');
+        }
+        
 
     }
 
