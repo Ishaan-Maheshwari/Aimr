@@ -1,0 +1,42 @@
+.sidebar {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:rgb(160, 185, 255);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow-x: hidden;
+    padding-top: 10px;
+  }
+  ul{list-style: none;}
+  #uplist{
+    font-size: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Sans Unicode', sans-serif;
+  }
+  ::-webkit-scrollbar{
+    width:min-content;
+  }
+  #category-list{
+    height:40%;
+    overflow-y: scroll;
+    margin-right: 10px;
+    padding-left: 5px;
+    border-radius:10px;
+    background-color: azure;
+  }
+  #downlist{
+    font-size: 18px;
+    position:absolute;
+    bottom: 0;
+  }
+  .main {
+    margin-left: 20%;
+    padding: 0px 10px;
+  }
+  #banner{
+    background-color: rgb(223, 134, 134);
+    border-radius: 6px;
+  }
